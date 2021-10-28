@@ -1,0 +1,151 @@
+{
+	"InitItems":[{"CfgId":101,"Num":10},{"CfgId":102,"Num":10},{"CfgId":103,"Num":10},{"CfgId":110,"Num":1},{"CfgId":201,"Num":1},{"CfgId":202,"Num":1},{"CfgId":203,"Num":1},{"CfgId":301,"Num":50},{"CfgId":302,"Num":50},{"CfgId":303,"Num":50},{"CfgId":304,"Num":50},{"CfgId":305,"Num":50},{"CfgId":306,"Num":50},{"CfgId":307,"Num":50},{"CfgId":308,"Num":50},{"CfgId":15101,"Num":0},{"CfgId":15102,"Num":0},{"CfgId":15103,"Num":0},{"CfgId":15104,"Num":0},{"CfgId":15105,"Num":0},{"CfgId":15106,"Num":0},{"CfgId":15201,"Num":0},{"CfgId":15202,"Num":0},{"CfgId":15203,"Num":0},{"CfgId":15204,"Num":0},{"CfgId":15205,"Num":0},{"CfgId":15206,"Num":0},{"CfgId":15301,"Num":0},{"CfgId":15302,"Num":0},{"CfgId":15303,"Num":0},{"CfgId":15304,"Num":0},{"CfgId":15305,"Num":0},{"CfgId":15306,"Num":0},{"CfgId":15401,"Num":0},{"CfgId":15402,"Num":0},{"CfgId":15403,"Num":0},{"CfgId":15404,"Num":0},{"CfgId":15405,"Num":0},{"CfgId":15406,"Num":0},{"CfgId":15407,"Num":0},{"CfgId":15408,"Num":0},{"CfgId":15409,"Num":0},{"CfgId":15410,"Num":0}],
+	"InitCats":[],
+	"InitDiamond":200,
+	"InitCoin":0,
+	"InitAreas":[1],
+	"InitBuildings":[],
+	"InitFormulas":[
+],
+	"InitHead":70101,
+	"MaxFriendNum":200,
+	
+	"HeartbeatInterval":600,
+	
+	"DaySignSumRewards":[
+		{
+			"SignNum":2,
+			"ChestId":6701,
+			"XChestId":6003,
+			"TChestId":6003
+		},
+		{
+			"SignNum":6,
+			"ChestId":6702,
+			"XChestId":6003,
+			"TChestId":6003
+		},
+		{
+			"SignNum":12,
+			"ChestId":6703,
+			"XChestId":6005,
+			"TChestId":6003
+		},
+		{
+			"SignNum":20,
+			"ChestId":6704,
+			"XChestId":6005,
+			"TChestId":6003
+		},
+		{
+			"SignNum":28,
+			"ChestId":6705,
+			"XChestId":6005,
+			"TChestId":6003
+		}
+	],
+	
+	"WoodChestUnlockTime":5,
+	"SilverChestUnlockTime":10800,
+	"GoldenChestUnlockTime":28800,
+	"GiantChestUnlockTime":43200,
+	"MagicChestUnlockTime":43200,
+	"RareChestUnlockTime":43200,
+	"EpicChestUnlockTime":43200,
+	"LegendryChestUnlockTime":43200,
+	
+	"GoogleLoginVerifyUrl":"https://www.googleapis.com/oauth2/v3/tokeninfo",
+	"AppleLoginVerifyUrl":"https://www.googleapis.com/oauth2/v3/tokeninfo",
+	"FaceBookLoginVerifyUrl":"https://www.googleapis.com/oauth2/v3/tokeninfo",
+	"ApplePayUrl":"https://buy.itunes.apple.com/verifyReceipt",
+	"ApplePaySandBoxUrl":"https://sandbox.itunes.apple.com/verifyReceipt",
+	
+	"MaxNameLen":32,
+	"ChgNameCost":[0,10,20,30,40,50],
+	"FirstPayReward":6801,
+
+	"ShopStartRefreshTime": "2017-Oct-12 08:00:00",
+	"ShopRefreshTime": "Monday 08:00:00",
+	
+	"ExpeditionTaskCount":4,
+	"ExpeditionSPEventSec":60,
+	"ExpeditionDayFreeChgCount":4,
+	"ExpeditionDayChgAddCost":50,
+	"ExpeditionDayMaxChgCost":14,
+	"ExpeditionDayStartCount":24,
+	"ExpeditionFirstTask": 22141,
+	
+	"MapBlockRefleshSec":28800,
+	"MapChestRefleshSec":43200,
+	"MapBlockRefreshMinLevel":6,
+	"MapBlockMaxNum":10,
+	
+	"NormalMailLastSec":180,
+	"ReqHelpMailLastSec":180,
+	"MaxMailCount":3,
+	
+	"ChapterUnlockNeedFriendNum":3,
+	"ChapterUnlockSecPerDiamond":300,
+	"MaxHelpUnlockNum":10,
+	"ExpeditionMultiVal":[100,150,200],
+	
+	"RankingListOnceGetItemsNum": 20,
+	
+	"WorldChatData" : {
+		"MaxMsgNum": 200,
+		"PullMaxMsgNum": 50,
+		"PullMsgCooldown": 3,
+		"MsgMaxBytes": 200,
+		"MsgExistTime": 100,
+		"SendMsgCooldown": 10
+	},
+	
+	"AnouncementMaxNum": 1000,
+	"AnouncementSendCooldown": 15,
+	"AnouncementSendMaxNum": 10,
+	"AnouncementExistTime": 10,
+	
+	"FriendMaxNum": 30,
+	"FriendRecommendNum": 10,
+	"FriendGivePointsRefreshTime": "05:30:00",
+	"FriendGivePointsPlayerNumOneDay": 100,
+	
+	"MaxDayBuyTiLiCount":5,
+	"DayBuyTiliAdd":20,
+	"DayBuyTiLiCost":200,
+	
+	"CancelMakingFormulaReturnMaterial" : 50,
+	"GiveFriendPointsOnce" : 5,
+	"GiveFriendPointsPlayersCount" : 20,
+	"GiveFriendPointsRefreshHours" : 6,
+	"GetFriendPointsOpenFriendWoodBox" : 1,
+	"GetFriendPointsOpenFriendSilverBox" : 3,
+	"GetFriendPointsOpenFriendGoldBox" : 5,
+	"FriendsMaxCount" : 200,
+	"FriendFosterLimit" : 3,
+	"FriendFosterHours" : 6,
+	"SpiritGrowPointNeedMinute": 5,
+	"FormulaAddNewSlotCostDiamond": 998,
+	"FormulaSpeedupMakingBuildingCostDiamond": 300,
+	"CropSpeedupCostDiamond": 300,
+	"CatHouseSpeedupLevelCostDiamond": 300,
+	"WorldChannelChatCooldown": 10,
+	"ChangeNameCostDiamond": 600,
+	"ChangeNameFreeNum": 1,
+	
+	"FirstChargeRewards": [15101,10,3,1000,2,1000],
+	"MonthCardSendRewardTime": "00:00:00",
+	
+	"MailTitleBytes":32,
+	"MailContentBytes":240,
+	"MailMaxCount":100,
+	"MailNormalExistDays":7,
+	"MailAttachExistDays":15,
+	"MailPlayerSendCooldown":30,
+	
+	"CatHouseProduceGoldMinutes": 10,
+	
+	"DailyTaskRefreshTime": "04:00:00",
+	
+	"SpaceCatPicUnlockGold": 1000
+}

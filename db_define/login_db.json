@@ -1,0 +1,40 @@
+{
+	"db_pkg" : "login_db",
+	
+	"charset": "utf8",
+	
+	"field_structs": [
+	],
+	
+	"tables" : [
+		{
+			"name": "Accounts",
+			"primary_key": "AccountId",
+			"engine": "innodb",
+			"fields": [
+				{ "name":"AccountId",			"type":"char(32) not null",				"index_type":"none" },
+				{ "name":"UniqueId",			"type":"char(64) not null default",		"index_type":"normal" },
+				{ "name":"Password",			"type":"char(32) not null default",		"index_type":"none" },
+				{ "name":"RegisterTime",		"type":"int unsigned not null default",	"index_type":"none" },
+				{ "name":"Channel",				"type":"char(32) not null default",		"index_type":"none" },
+				{ "name":"Token",				"type":"char(32) not null default",		"index_type":"none" },
+				{ "name":"ServerId",			"type":"int unsigned not null default",	"index_type":"none" },
+				{ "name":"BindNewAccount",		"type":"char(32) not null default",		"index_type":"none" },
+				{ "name":"OldAccount",			"type":"char(32) not null default",		"index_type":"none" }
+			]
+		},
+		{
+			"name": "BanPlayer",
+			"primary_key": "UniqueId",
+			"engine": "innodb",
+			"fields": [
+				{ "name":"UniqueId",			"type":"char(64) not null",				"index_type":"" },
+				{ "name":"Account",				"type":"char(32) not null default",		"index_type":"" },
+				{ "name":"PlayerId",			"type":"int unsigned not null default",	"index_type":"" },
+				{ "name":"StartTime",			"type":"int unsigned not null default",	"index_type":"" },
+				{ "name":"StartTimeStr",		"type":"char(64) not null default",		"index_type":"" },
+				{ "name":"Duration",			"type":"int unsigned not null default",	"index_type":"" }
+			]
+		}
+	]
+}

@@ -1,0 +1,245 @@
+syntax = "proto3";
+package msg.rpc_message;
+
+enum MSGID {
+	NONE									= 0;
+	G2G_PLAYER_INFO_REQUEST					= 1; // 请求玩家信息
+	G2G_PLAYER_INFO_RESPONSE				= 2; // 返回玩家信息
+	G2G_PLAYER_INFO_NOTIFY					= 3; // 玩家信息通知
+	G2G_PLAYER_BATTLE_INFO_REQUEST  		= 4; // 请求玩家战斗信息
+	G2G_PLAYER_BATTLE_INFO_RESPONSE 		= 5; // 返回玩家战斗信息
+	G2G_PLAYER_MULTI_INFO_REQUEST			= 10; // 请求多个玩家信息
+	G2G_PLAYER_MULTI_INFO_RESPONSE			= 11; // 请求多个玩家信息返回
+	
+	G2G_FRIENDS_INFO_REQUEST				= 100; // 请求多个好友信息
+	G2G_FRIENDS_INFO_RESPONSE				= 101; // 请求多个好友信息返回
+	G2G_FRIEND_ASK_REQUEST					= 102; // 添加好友请求
+	G2G_FRIEND_ASK_RESPONSE					= 103; // 添加好友返回
+	G2G_FRIEND_AGREE_REQUEST 				= 104; // 同意添加好友请求
+	G2G_FRIEND_AGREE_RESPONSE 				= 105; // 同意添加好友返回
+	G2G_FRIEND_REFUSE_REQUEST 				= 106; // 拒绝添加好友请求
+	G2G_FRIEND_REFUSE_RESPONSE 				= 107; // 拒绝添加好友返回
+	G2G_FRIEND_REMOVE_REQUEST 				= 108; // 删除好友请求
+	G2G_FRIEND_REMOVE_RESPONSE 				= 109; // 删除好友返回
+	G2G_FRIEND_REMOVE_NOTIFY				= 110; // 删除好友通知
+	G2G_FRIEND_GIVE_POINTS_REQUEST 			= 111; // 赠送友情点请求
+	G2G_FRIEND_GIVE_POINTS_RESPONSE 		= 112; // 赠送友情点返回
+	G2G_FRIEND_GET_POINTS_REQUEST			= 113; // 领取友情点请求
+	G2G_FRIEND_GET_POINTS_RESPONSE			= 114; // 领取友情点返回
+	G2G_FRIENDS_REFRESH_GIVE_POINTS_REQUEST	= 115; // 刷新赠送好友点数
+	G2G_FRIENDS_REFRESH_GIVE_POINTS_RESPONSE = 116; // 刷新赠送好友点数返回
+	G2G_FRIEND_CHAT_REQUEST					= 117; // 好友聊天
+	G2G_FRIEND_CHAT_RESPONSE				= 118; // 好友聊天返回
+	
+	G2G_FOCUS_PLAYER_REQUEST				= 200; // 关注
+	G2G_FOCUS_PLAYER_RESPONSE				= 201; //
+	G2G_UNFOCUS_PLAYER_REQUEST				= 202; // 取消关注
+	G2G_UNFOCUS_PLAYER_RESPONSE				= 203; //
+	G2G_SPACE_DATA_REQUEST					= 210; // 空间数据
+	G2G_SPACE_DATA_RESPONSE					= 211;
+	G2G_SPACE_CAT_REQUEST					= 212; // 空间猫
+	G2G_SPACE_CAT_RESPONSE					= 213;
+	
+	G2G_GET_PLAYER_CHEST_TABLE_ID_REQUEST	= 300; // 获取玩家宝箱配置ID
+	G2G_OPEN_PLAYER_CHEST_TABLE_REQUEST		= 301; // 打开玩家宝箱
+}
+
+// 玩家信息请求
+message G2GPlayerInfoRequest {
+}
+
+// 玩家信息返回
+message G2GPlayerInfoResponse {
+	string UniqueId 						= 2;
+	string Account							= 3;
+	int32 Level								= 4;
+	int32 Head								= 5;
+}
+
+// 玩家信息通知
+message G2GPlayerInfoNotify {
+	
+}
+
+// 玩家战斗信息请求
+message G2GPlayerBattleInfoRequest {
+}
+
+// 玩家战斗信息返回
+message G2GPlayerBattleInfoResponse {
+	
+}
+
+// 多个玩家信息请求
+message G2GPlayerMultiInfoRequest {
+}
+
+message PlayerInfo {
+	int32 PlayerId							= 1;
+	string UniqueId 						= 2;
+	string Account							= 3;
+	int32 Level								= 4;
+	int32 Head								= 5;
+}
+
+// 多个玩家信息返回
+message G2GPlayerMultiInfoResponse {
+	repeated PlayerInfo PlayerInfos			= 1;
+}
+
+// 添加好友请求
+message G2GFriendAskRequest {
+	int32 FromPlayerId						= 1;
+	string FromPlayerName					= 2;
+	int32 FromPlayerLevel					= 3;
+	int32 FromPlayerHead					= 4;
+}
+
+// 添加好友返回
+message G2GFriendAskResponse {	
+}
+
+// 好友同意
+message G2GFriendAgreeRequest {
+	FriendInfo Info							= 1;
+}
+
+// 好友同意返回
+message G2GFriendAgreeResponse {
+}
+
+// 好友删除
+message G2GFriendRemoveRequest {
+}
+
+// 好友删除返回
+message G2GFriendRemoveResponse {
+}
+
+// 多个好友信息
+message G2GFriendsInfoRequest {
+}
+
+// 好友信息
+message FriendInfo {
+	int32 PlayerId 							= 1; // 好友玩家Id
+	string Name 							= 2; // 好友昵称
+	int32 Head 								= 3; // 好友头像
+	int32 Level 							= 4; // 等级
+	int32 VipLevel 							= 5; // vip等级
+	int32 LastLogin 						= 6; // 上次登录时间
+	int32 FriendPoints 						= 7; // 友情点
+	int32 LeftGiveSeconds 					= 8; // 剩余赠送时间
+	int32 UnreadMessageNum 					= 9; // 未读消息数量
+	int32 Zan								= 10; // 赞
+	bool IsZanToday							= 11; // 今天是否赞过
+	bool IsOnline							= 12; // 是否在线
+}
+
+// 多个好友信息返回
+message G2GFriendsInfoResponse {
+	repeated FriendInfo Friends 			= 1;
+}
+
+// 刷新赠送好友点数
+message G2GFriendsRefreshGivePointsRequest {
+}
+
+message G2GFriendsRefreshGivePointsResponse {
+}
+
+// 赠送好友点数
+message G2GFriendGivePointsRequest {
+}
+
+message G2GFriendGivePointsResponse {
+	int32 LastSave							= 1;
+	int32 RemainSeconds						= 2;
+}
+
+// 好友聊天
+message G2GFriendChatRequest {
+	bytes Content							= 1;
+}
+
+message G2GFriendChatResponse {
+}
+
+// 关注
+message G2GFocusPlayerRequest {
+}
+
+message G2GFocusPlayerResponse {
+	int32 PlayerId							= 1;
+	string PlayerName						= 2;
+	int32 PlayerLevel						= 3;
+	int32 PlayerHead						= 4;
+}
+
+// 取消关注
+message G2GUnfocusPlayerRequest {
+}
+
+message G2GUnfocusPlayerResponse {
+}
+
+// 获取个人空间
+message G2GSpaceDataRequest {
+}
+
+message SpaceCatData {
+	int32 CatId								= 2;
+	int32 CatTableId 						= 3;
+	string CatName							= 4;
+	int32 CatOuqi							= 5;
+	int32 CoinAbility					 	= 6;
+	int32 MatchAbility						= 7;
+	int32 ExploreAbility					= 8;
+}
+
+message G2GSpaceDataResponse {
+	string PlayerName						= 1;
+	int32 PlayerLevel						= 2;
+	int32 PlayerHead						= 3;
+	int32 Zan								= 4;
+	int32 BeFocusNum					 	= 5;
+	int32 Charm								= 6;
+	repeated SpaceCatData Cats				= 7;
+	int32 Gender							= 8;
+	repeated int32 FashionIds				= 9;
+}
+
+// 获取其他玩家个人空间的猫
+message G2GSpaceCatRequest {
+	int32 PlayerId							= 1;
+	int32 CatId								= 2;
+}
+
+message G2GSpaceCatResponse {
+	int32 PlayerId							= 1;
+	int32 CatId								= 2;
+	int32 CatTableId						= 3;
+	string CatName							= 4;
+	int32 CoinAbility						= 5;
+	int32 MatchAbility						= 6;
+	int32 ExploreAbility					= 7;
+	int32 Ouqi								= 8;
+}
+
+// 获得玩家宝箱配置ID
+message G2GGetPlayerChestTableIdRequest {
+	int32 ChestId							= 1;
+}
+
+message G2GGetPlayerChestTableIdResponse {
+	int32 ChestTableId						= 1;
+}
+
+// 打开玩家宝箱
+message G2GOpenPlayerChestRequest {
+	int32 ChestId							= 1;
+}
+
+message G2GOpenPlayerChestResposne {
+	int32 ChestTableId						= 1;
+}

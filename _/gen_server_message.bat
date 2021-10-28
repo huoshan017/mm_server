@@ -1,0 +1,53 @@
+cd../proto
+
+md gen_go
+cd gen_go
+
+md server_message
+md db_login
+md db_game
+md db_rpc
+
+cd ../../third_party/protobuf
+
+move protoc.exe ../../proto
+
+move protoc-gen-go.exe ../../proto
+
+cd ../../proto
+protoc.exe --go_out=./gen_go/server_message/ server_message.proto
+cd ../_
+if errorlevel 1 goto exit
+
+cd ../proto
+go install mm_server_new/proto/gen_go/server_message
+cd ../_
+if errorlevel 1 goto exit
+
+cd ../proto
+protoc.exe --go_out=./gen_go/db_game/ db_gamesvr.proto
+cd ../_
+if errorlevel 1 goto exit
+
+cd ../proto
+protoc.exe --go_out=./gen_go/db_login/ db_loginsvr.proto
+cd ../_
+if errorlevel 1 goto exit
+
+cd ../proto
+protoc.exe --go_out=./gen_go/db_rpc/ db_rpcsvr.proto
+cd ../_
+if errorlevel 1 goto exit
+
+cd ../proto
+move protoc.exe ../third_party/protobuf
+move protoc-gen-go.exe ../third_party/protobuf
+cd ../_
+
+goto ok
+
+:exit
+echo gen message failed!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+:ok
+echo gen message ok
